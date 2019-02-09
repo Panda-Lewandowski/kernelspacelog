@@ -4,6 +4,7 @@
 #include <linux/keyboard.h>
 #include <linux/input.h>
 #include <stdio.h>
+#include <time.h>
 
 #define FIRST_CD    KEY_1
 #define LAST_CD     KEY_SLASH
@@ -19,8 +20,8 @@ struct keycode {
 typedef struct keycode keycode;
 keycode codes[] =
 {
-    {KEY_ENTER, "\n"},
-    {KEY_SPACE, " "},
+    {KEY_ENTER, "<Enter>"},
+    {KEY_SPACE, "<Space>"},
     {KEY_ESC, "<Esc>"},
     {KEY_BACKSPACE, "<Backspace>"},
     {KEY_TAB, "<Tab>"},
