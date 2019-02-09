@@ -6,3 +6,4 @@ Module.*
 *.order 
 .tmp_versions 
 .keylogger*
+parser
