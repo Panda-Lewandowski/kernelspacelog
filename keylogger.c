@@ -124,7 +124,7 @@ int kbd_notifier(struct notifier_block* nblock, unsigned long code, void* _param
 		if(ts_up.tv_sec == ts_down.tv_sec) {
 			d = (ts_up.tv_nsec - ts_down.tv_nsec)/1000000;
 		}else{
-			d = 60000 - (ts_down.tv_nsec + ts_up.tv_nsec)/1000000;
+			d = (ts_down.tv_nsec + ts_up.tv_nsec)/1000000;
 		}
 
 		*deltas_ptr = d;
