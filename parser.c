@@ -5,20 +5,7 @@
 
 #include "parser.h"
 
-extern keycode codes[];
-
-void print_char(int code) {
-    int i;
-
-    if((code < FIRST_CD || code > LAST_CD) && code != KEY_SPACE)
-    {
-        for(i = 0; i < sizeof(codes)/sizeof(keycode); i++)   
-            if (codes[i].code == code)
-                printf("%s", codes[i].string);
-    }
-    else
-        printf("%c",ch_table[(code-FIRST_CD)]);
-}
+extern const char* keymap[];
 
 int main(int argc, char *argv[])
 {
@@ -56,9 +43,11 @@ int main(int argc, char *argv[])
 		unsigned int d = deltas[i];
 		struct timespec t = times[i];
 	
-		printf("Keypress %i at %lu:%lu with delta %u\n", key, t.tv_sec % 60, t.tv_nsec / 1000, d);
+		printf("Keypress %i (%s) at %lu:%lu with delta %u\n", key, keymap[key], t.tv_sec % 60, t.tv_nsec / 1000, d);
+		
 
 	}
+
 
 	free(buffer);
 	free(times);
